@@ -17,7 +17,7 @@ prusaSlicer for some of these formats, but not for any of the recent printer mod
 
 [UVTools](https://github.com/sn4k3/UVtools) knows how to convert Prusa .sl1 files to nearly all
 of the Anycubic formats including the latest .pm5 and .pm5s, and some Reddit posts recommend
-using it.  This will be my first try at getting output from Prusa to print on my M5s.  See
+using it.  This will become my first try at getting output from Prusa to print on my M5s.  See
 the workflow outlined in [this reddit post](https://www.reddit.com/r/AnyCubicPhotonMonoX/comments/uvyi3q/anyone_use_prusaslicer_for_anycubic_photon/)
 
 If I have enough time (unlikely) I may look at splicing some of the UVTools output code into a PR
@@ -47,3 +47,30 @@ for PrusaSlicer, assuming the licenses are compatible.
 | Photon Mono X 6Ks      | .px6s            |
 | Photon Mono M5         | .pm5             |
 | Photon Mono M5S        | .pm5s            |
+
+## Creating a Printer Definition for PrusaSlicer
+
+In order to generate output to send to UVTools we need an accurate printer
+definition in PrusaSlicer.  The important parameters for this are given
+in the following table
+
+| Parameter          | Value        | Source
+| ------             | ------       | ------
+| Max print height   | 200 mm       | Anycubic website
+| Display width      | 223.78 mm    | Anycubic website
+| Display height     | 126.38 mm    | Anycubic website
+| X pixels           | 13312        | Anycubic website
+| Y pixels           | 5120         | Anycubic website
+| Bed shape X        | 223.78 mm    | comparison with existing defs
+| Bed shape Y        | 126.38 mm    | comparison with existing defs
+| Bed origin         | 0,0          | --until proven otherwise--
+| Scaling correction | 1,1,1        | comparison with existing defs
+| Elephant foot comp | 0.2 mm       | comparison with existing defs
+| Elephant comp min  | 0.2 mm       | comparison with existing defs
+| Gamma correction   | 1.0          | --until proven otherwise--
+| Minimum exposure   | 1 sec        | comparison with existing defs, may want 0.5 sec
+| Max exposure       | 120 sec      | ? seems wildly high
+| Min. initial exp.  | 1 sec        | comparison with existing defs
+| Max. initial exp.  | 300 sec      | comparison with existing defs
+| Format of archive  | pm5s         | ? maybe not supported, use sl1 with UVTools?
+| SLA output precis. | 0.001 mm     | matches existing defs
