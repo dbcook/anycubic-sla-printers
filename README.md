@@ -1,4 +1,4 @@
-# Info and configurations for Anycubic resin SLA printers
+# Info and Configurations for Anycubic Resin SLA printers
 
 The printer config code in the [prusaSlicer github repo](https://github.com/prusa3d/PrusaSlicer/blob/master/resources/profiles/Anycubic.ini)
 is way behind on adding the newer and very much improved Anycubic SLA resin printers.
@@ -19,6 +19,10 @@ prusaSlicer for some of these formats, but not for any of the recent printer mod
 of the Anycubic formats including the latest .pm5 and .pm5s, and some Reddit posts recommend
 using it.  This will be my first try at getting output from Prusa to print on my M5s.  See
 the workflow outlined in [this reddit post](https://www.reddit.com/r/AnyCubicPhotonMonoX/comments/uvyi3q/anyone_use_prusaslicer_for_anycubic_photon/)
+
+If I have enough time (unlikely) I may look at splicing some of the UVTools output code into a PR
+for PrusaSlicer, assuming the licenses are compatible.
+
 
 |  Model                 | File Format      | PrusaSlicer
 | -------                | ------------     | ------
