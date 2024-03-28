@@ -30,15 +30,15 @@ for PrusaSlicer, assuming the licenses are compatible.
 | Photon S               | .photons / .pws  |
 | Photon 0               | .pw0             |
 | Photon X               | .pwx             |
-| Photon Mono            | .pwmo            |
+| Photon Mono            | .pwmo            | Yes
 | Photon Mono 4K         | .pwma            |
-| Photon Mono SE         | .pwms            |
-| Photon Mono X          | .pwmx            |
+| Photon Mono SE         | .pwms            | Yes
+| Photon Mono X          | .pwmx            | Yes
 | Photon Mono X2         | .pmx2            |
 | Photon Mono SQ         | .pmsq            |
 | Photon Ultra           | .dlp             |
 | Photon D2              | .dl2p            |
-| Photon Mono X 6K       | .pwmb            |
+| Photon Mono X 6K       | .pwmb            | Prusa incorrectly lists pwmx for this profile
 | Photon M3              | .pm3             |
 | Photon M3 Plus         | .pwmb            |
 | Photon M3 Max          | .pm3m            |
