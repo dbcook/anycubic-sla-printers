@@ -1,0 +1,7 @@
+# no dotenv files please
+.env*
+# Mac specific exclusions
+.DS_Store
+
+*.bkp
+
