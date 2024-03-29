@@ -61,16 +61,16 @@ in the following table
 | Display height     | 126.38 mm    | Anycubic website
 | X pixels           | 13312        | Anycubic website
 | Y pixels           | 5120         | Anycubic website
-| Bed shape X        | 223.78 mm    | comparison with existing defs
-| Bed shape Y        | 126.38 mm    | comparison with existing defs
+| Bed shape X        | 223.78 mm    | matches existing defs, == width
+| Bed shape Y        | 126.38 mm    | matches existing defs, == height
 | Bed origin         | 0,0          | --until proven otherwise--
-| Scaling correction | 1,1,1        | comparison with existing defs
-| Elephant foot comp | 0.2 mm       | comparison with existing defs
-| Elephant comp min  | 0.2 mm       | comparison with existing defs
-| Gamma correction   | 1.0          | --until proven otherwise--
-| Minimum exposure   | 1 sec        | comparison with existing defs, may want 0.5 sec
-| Max exposure       | 120 sec      | ? seems wildly high
-| Min. initial exp.  | 1 sec        | comparison with existing defs
-| Max. initial exp.  | 300 sec      | comparison with existing defs
+| Scaling correction | 1,1,1        | no rescaling by default
+| Elephant foot comp | 0.2 mm       | matches existing defs
+| Elephant comp min  | 0.2 mm       | matches existing defs
+| Gamma correction   | 1.0          | no correction by default
+| Minimum exposure   | 1 sec        | comparison with existing defs, may want 0.5 sec?
+| Max exposure       | 120 sec      | ? seems high
+| Min. initial exp.  | 1 sec        | matches existing defs
+| Max. initial exp.  | 300 sec      | matches existing defs
 | Format of archive  | pm5s         | ? maybe not supported, use sl1 with UVTools?
-| SLA output precis. | 0.001 mm     | matches existing defs
+| SLA output precis. | 0.001 mm     | matches existing defs, should it be finer?
