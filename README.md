@@ -46,7 +46,7 @@ for PrusaSlicer, assuming the licenses are compatible.
 | Photon Mono 2          | .pm3n            |
 | Photon Mono X 6Ks      | .px6s            |
 | Photon Mono M5         | .pm5             |
-| Photon Mono M5S        | .pm5s            |
+| Photon Mono M5S        | .pm5s            | UVTools lists a different one, but possibly non significant
 
 ## Creating a Printer Definition for PrusaSlicer
 
