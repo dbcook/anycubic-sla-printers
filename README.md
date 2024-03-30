@@ -91,7 +91,7 @@ The following PrusaSlicer entities are of interest:
 
 The relationships are shown in the following diagram:
 
-***INSERT DRAWIO DIAGRAM HERE***
+![PrusaSlicer Object Relationships](./prusaSlicer_objects.svg)
 
 Notes for the diagram:
 
