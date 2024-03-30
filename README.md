@@ -75,6 +75,32 @@ in the following table
 | Format of archive  | pm5s         | ? maybe not supported, use sl1 with UVTools?
 | SLA output precis. | 0.001 mm     | matches existing defs, should it be finer?
 
+##  How the PrusaSlicer Settings UI Works for SLA Printers
+
+You can always choose any printer settings preset you like from the
+main Plater screen, where the dropdown is labeled "Printer".
+
+The chosen printer settings preset determines which printer profiles
+(on a confusingly named "print settings" tab in the UI) can be selected
+from the "SLA print settings" dropdown in the Plater screen.
+
+Finally the combination of "printer settings" and "print settings"
+determines which materials are available in the "SLA material"
+dropdown in the UI.  The details for this are on the "Material Settings"
+tab.
+
+Due to this massively ambiguous labeling, here is a table giving the
+correspondence between Plater screen dropdowns and the detail tabs:
+
+|  Item                   |  Plater Dropdown Name   |  Tab Name
+|--------                 |  ----------             |  -------------
+| Printer settings preset | Printer                 | Printer Settings
+| Print profile           | SLA print settings      | Print Settings
+| Material settings       | SLA material            | Material Settings
+
+The tabs are also not in the dependency chain order; seemingly
+they are in order of how often you would modify things on that tab.
+
 ### Linkage to PrusaSlicer Material Definitions and Print Profiles
 
 The slicer material definitions include the needed initial and primary exposure times,
