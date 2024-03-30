@@ -85,7 +85,6 @@ those objects plus filter expressions that understand parameter names in the pri
 
 The following PrusaSlicer entities are of interest:
 
-* Printer Definition
 * Printer Settings
 * Print profile
 * Material Settings
@@ -103,36 +102,36 @@ Notes for the diagram:
   the layer height in the print profile.
   * Expansion correction XYZ, default [1,1,1]
 
-* The printer Settings Notes has keywords
+* The printer Settings Notes has keywords like
 ```
 PRINTER_VENDOR_ANYCUBIC
 PRINTER_MODEL_PHOTONMONOxxxx
 ```
-These can be used in filter expressions for the material definition so that
+These can be used in filter expressions for the material settings so that
 the given material is only shown as a choice when a matching printer
-vendor and model are specific.
+vendor and model are specified.
 
-* The Printer Settings Dependencies tab has filter regex field
+* The Print Profile | Dependencies tab has filter regex field
 `Compatible printers condition` that establishes with which printers the
-Printer Settings are compatible.  An example value is
+Print Profile is compatible.  An example value is
 ```
 printer_notes=~/.*PHOTONMONOX .*/
 ```
-This means that the Printer Definition | Notes must have something
-matching the given regex before the Printer Settings entry will be
+This means that the Printer Settings | Notes must have something
+matching the given regex before the Print Profile entry will be
 shown in the list for that printer.
 
-* The material definition in the Dependencies tab has filter regex fields 
+* The `material Settings | Dependencies` tab has filter regex fields 
 `Compatible printers condition` and `Compatible print profiles condition`
 that are used to establish when the material is available.
 
-* An example for `Compatible printers condition` is
+* An example for  `Material Settings | Dependencies | Compatible printers condition` is
 ```
 printer_notes=~/.*MONO.*/ and printer_notes=~/.*VENDOR_ANYCUBIC.*/ and printer_notes=~/.*SLA.*/
 ```
-* Note that the above regex refers to Printer Settings | Notes.  It is not very robust as it may could generate false positive matches.
+* Note that the above regex refers to Printer Settings | Notes.  This particular example is not very robust as it may could generate false positive matches.
 
-* Example `Compatible print profiles condition` is
+* Example `Material Settings | Dependencies | Compatible print profiles condition` is
 ```
 layer_height == 0.05
 ```
