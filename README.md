@@ -74,3 +74,68 @@ in the following table
 | Max. initial exp.  | 300 sec      | matches existing defs
 | Format of archive  | pm5s         | ? maybe not supported, use sl1 with UVTools?
 | SLA output precis. | 0.001 mm     | matches existing defs, should it be finer?
+
+### Linkage to PrusaSlicer Material Definitions and Print Profiles
+
+The slicer material definitions include the needed initial and primary exposure times,
+which are printer, material and print profile (mainly layer height) dependent.
+
+The various linkages needed are implemented via keywords in the Notes sections of
+those objects plus filter expressions that understand parameter names in the print profile.
+
+The following PrusaSlicer entities are of interest:
+
+* Printer Definition
+* Printer Settings
+* Print profile
+* Material Settings
+
+The relationships are shown in the following diagram:
+
+***INSERT DRAWIO DIAGRAM HERE***
+
+Notes for the diagram:
+
+* Material settings specify the following properties
+  * Cosmetics, cost, volume. density.  These aren't very relevant to automated selection.
+  * Initial layer height
+  * Exposure time and initial exposure time.  It's not clear if this overrides
+  the layer height in the print profile.
+  * Expansion correction XYZ, default [1,1,1]
+
+* The printer Settings Notes has keywords
+```
+PRINTER_VENDOR_ANYCUBIC
+PRINTER_MODEL_PHOTONMONOxxxx
+```
+These can be used in filter expressions for the material definition so that
+the given material is only shown as a choice when a matching printer
+vendor and model are specific.
+
+* The Printer Settings Dependencies tab has filter regex field
+`Compatible printers condition` that establishes with which printers the
+Printer Settings are compatible.  An example value is
+```
+printer_notes=~/.*PHOTONMONOX .*/
+```
+This means that the Printer Definition | Notes must have something
+matching the given regex before the Printer Settings entry will be
+shown in the list for that printer.
+
+* The material definition in the Dependencies tab has filter regex fields 
+`Compatible printers condition` and `Compatible print profiles condition`
+that are used to establish when the material is available.
+
+* An example for `Compatible printers condition` is
+```
+printer_notes=~/.*MONO.*/ and printer_notes=~/.*VENDOR_ANYCUBIC.*/ and printer_notes=~/.*SLA.*/
+```
+* Note that the above regex refers to Printer Settings | Notes.  It is not very robust as it may could generate false positive matches.
+
+* Example `Compatible print profiles condition` is
+```
+layer_height == 0.05
+```
+* The above refers to Print Settings | Layers and Parameters | "Layer Height" and means that the material spec is only valid when the layer
+height == 0.05.  This might be expected since the required exposure time
+could vary with the layer height.
