@@ -129,7 +129,7 @@ that are used to establish when the material is available.
 ```
 printer_notes=~/.*MONO.*/ and printer_notes=~/.*VENDOR_ANYCUBIC.*/ and printer_notes=~/.*SLA.*/
 ```
-* Note that the above regex refers to Printer Settings | Notes.  This particular example is not very robust as it may could generate false positive matches.
+* Note that the above regex refers to Printer Settings | Notes.  This particular example is not very robust as it could generate false positive matches.
 
 * Example `Material Settings | Dependencies | Compatible print profiles condition` is
 ```
