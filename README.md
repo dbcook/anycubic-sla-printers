@@ -182,3 +182,15 @@ could vary with the layer height.
 
 The only good place to find these right now is [this wiki page](https://wiki.anycubic.com/en/resin-3d-printer/photon-mono-m5s-pro).
 The M5s Pro is still so new that it is not listed in the resin parameter tables for each Anycubic resin.
+
+## Resources
+
+[Reddit Anycubic Printers](https://www.reddit.com/r/AnycubicPhoton/)
+
+Reddit also has some groups for specific printer models but they are thinly subscribed compared to the above.
+
+[UVTools](https://github.com/sn4k3/UVtools)
+
+[prusaSlicer github repo](https://github.com/prusa3d/PrusaSlicer/blob/master/resources/profiles/Anycubic.ini)
+
+[List of Anycubic Output Formats](https://github.com/prusa3d/PrusaSlicer/blob/master/resources/profiles/Anycubic.ini)
