@@ -22,6 +22,15 @@ of the Anycubic formats including the latest .pm5 and .pm5s, and some Reddit pos
 using it.  This will become my first try at getting output from Prusa to print on my M5s.  See
 the workflow outlined in [this reddit post](https://www.reddit.com/r/AnyCubicPhotonMonoX/comments/uvyi3q/anyone_use_prusaslicer_for_anycubic_photon/)
 
+This workflow amounts to:
+1. Load your .stl design file (from OnShape, OpenSCAD, etc.) into PrusaSlicer
+1. Set up the layout and add supports in PrusaSlicer
+  1. How to get printer physical params (build volume etc.) set for the Anycubic printer?
+  1. Just change file output extension in Anycubic printer def?
+1. Slice and save to a .sl1 file (the format for Prusa's SLA printer)
+1. Read the .sl1 with UVTools and convert to the needed Anycubic file type
+1. Write the resulting Anycubic file to a USB drive and transfer to the printer.
+
 If I have enough time (unlikely) I may look at splicing some of the UVTools output code into a PR
 for PrusaSlicer, assuming the licenses are compatible.
 
@@ -67,7 +76,7 @@ in the following table
 | Bed shape X        | 223.78 mm    | matches existing defs, == width
 | Bed shape Y        | 126.38 mm    | matches existing defs, == height
 | Bed origin         | 0,0          | --until proven otherwise--
-| Scaling correction | 1,1,1        | no rescaling by default
+| Scaling correction | 1,1,1        | no rescaling here, should go in material def
 | Elephant foot comp | 0.2 mm       | matches existing defs
 | Elephant comp min  | 0.2 mm       | matches existing defs
 | Gamma correction   | 1.0          | no correction by default
@@ -130,6 +139,7 @@ Notes for the diagram:
   * Exposure time and initial exposure time.  It's not clear if this overrides
   the layer height in the print profile.
   * Expansion correction XYZ, default [1,1,1]
+    * This is the right place to do the shrinkage correction; materials vary
 
 * The printer Settings Notes has keywords like
 ```
